@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/resorse">
+        <file>C:/Users/alexey/Downloads/feather/bell.svg</file>
+        <file>C:/Users/alexey/Downloads/feather/chrome.svg</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>icon/caffeine_logo_icon_256818.png</file>
+        <file>icon/icons8contacts64.png</file>
+        <file>icon/icons8-quetion-64.png</file>
+        <file>icon/icons8-chat-64.png</file>
+        <file>icon/icons8-cloud-64.png</file>
+        <file>icon/icons8-comments-64.png</file>
+        <file>icon/icons8-OK-64.png</file>
+        <file>icon/icons8-sand-64.png</file>
+    </qresource>
+</RCC>
