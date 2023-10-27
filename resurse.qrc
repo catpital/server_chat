@@ -12,5 +12,7 @@
         <file>icon/icons8-comments-64.png</file>
         <file>icon/icons8-OK-64.png</file>
         <file>icon/icons8-sand-64.png</file>
+        <file>icon/coffee-steam.gif</file>
+        <file>icon/ghost-coffee.gif</file>
     </qresource>
 </RCC>

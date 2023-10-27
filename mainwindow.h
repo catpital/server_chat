@@ -46,6 +46,8 @@ private slots:
 
     void on_stackedWidget_currentChanged(int arg1);
 
+    void on_check_user_ban_clicked();
+
 private:
     Ui::MainWindow *ui;
 
