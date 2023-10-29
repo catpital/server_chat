@@ -20,7 +20,7 @@ signals:
 private slots:
     void on_actionexit_triggered();
 
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
     void on_checkBox_stateChanged(int arg1);
 
@@ -47,6 +47,22 @@ private slots:
     void on_stackedWidget_currentChanged(int arg1);
 
     void on_check_user_ban_clicked();
+
+    void on_pBlogout_clicked();
+
+    //void on_checkBox_clicked();
+
+    void on_checkBox_block_clicked();
+
+    //void on_bantime_itemClicked(QListWidgetItem *item);
+
+   // void on_bantime_itemChanged(QListWidgetItem *item);
+
+    void on_actionset_ban_triggered();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
