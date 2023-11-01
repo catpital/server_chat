@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>756</width>
-    <height>452</height>
+    <width>778</width>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -173,14 +173,14 @@ background-color: #81a9ff; </string>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>110</y>
-      <width>501</width>
-      <height>291</height>
+      <width>571</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page_3"/>
     <widget class="QWidget" name="page_5">
@@ -298,34 +298,6 @@ background-color: #81a9ff; </string>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QListWidget" name="listWidget">
-      <property name="geometry">
-       <rect>
-        <x>25</x>
-        <y>70</y>
-        <width>261</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #ffffff</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>user1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>user2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string notr="true">user3</string>
-       </property>
-      </item>
-     </widget>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
@@ -339,11 +311,24 @@ background-color: #81a9ff; </string>
        <string>Users</string>
       </property>
      </widget>
+     <widget class="QTableView" name="tabViewusers">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>521</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#ffffff;</string>
+      </property>
+     </widget>
      <widget class="QListWidget" name="bantime">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>80</y>
+        <x>140</x>
+        <y>320</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -369,16 +354,73 @@ background-color: #81a9ff; </string>
        </property>
       </item>
      </widget>
+     <widget class="QPushButton" name="pBadduser">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>320</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add user</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBsubmit">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>320</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBdeleteuser">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>320</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delete user</string>
+      </property>
+     </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>70</y>
-        <width>81</width>
-        <height>81</height>
+        <x>10</x>
+        <y>320</y>
+        <width>122</width>
+        <height>27</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Block</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_block">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
@@ -393,24 +435,6 @@ background-color: #81a9ff; </string>
            <property name="styleSheet">
             <string notr="true">background-color:  #81a9ff</string>
            </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Block</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBox_block">
            <property name="text">
             <string/>
            </property>
@@ -437,16 +461,101 @@ background-color: #81a9ff; </string>
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab_1">
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
+       <widget class="QTableView" name="tableViewmessages">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>431</width>
+          <height>181</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pBadd">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>add</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pBdel">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>190</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>del</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pBsub">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>190</y>
+          <width>95</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>sub</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Tab 2</string>
        </attribute>
+       <widget class="QTableView" name="tableViewmess2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>441</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="pBnext">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>290</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBback">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>290</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
      </widget>
     </widget>
    </widget>
@@ -456,7 +565,7 @@ background-color: #81a9ff; </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>756</width>
+     <width>778</width>
      <height>28</height>
     </rect>
    </property>

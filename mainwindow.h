@@ -1,6 +1,13 @@
 #pragma once
-
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlQuery>
+#include <QSqlTableModel>
+#include <QSqlError>
 #include <QMainWindow>
+#include <QtSql>
+#include "sqlite.h"
+//#include <QSQLITE>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -64,9 +71,36 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pBadduser_clicked();
+
+    void on_pBsubmit_clicked();
+
+    void on_pBdeleteuser_clicked();
+
+    void on_tabViewusers_clicked(const QModelIndex &index);
+
+    void on_tableViewmessages_clicked(const QModelIndex &index);
+
+    void on_pBnext_clicked();
+
+    void on_pBback_clicked();
+
+    void on_pBadd_clicked();
+
+    void on_pBdel_clicked();
+
+    void on_pBsub_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase db;
+    QSqlQuery *query;
 
+    QSqlTableModel *model2;
+    QSqlTableModel *model1;
+    QSqlTableModel *model3;
+    int row;
+    int res;
 
 
 };
