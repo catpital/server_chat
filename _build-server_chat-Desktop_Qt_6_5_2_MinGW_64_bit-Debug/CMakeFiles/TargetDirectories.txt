@@ -1,0 +1,9 @@
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/server_chat.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/server_chat_autogen_timestamp_deps.dir
+D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/server_chat_autogen.dir

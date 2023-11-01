@@ -180,7 +180,7 @@ background-color: #81a9ff; </string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_3"/>
     <widget class="QWidget" name="page_5">
@@ -534,6 +534,19 @@ background-color: #81a9ff; </string>
      <widget class="QPushButton" name="pBnext">
       <property name="geometry">
        <rect>
+        <x>130</x>
+        <y>290</y>
+        <width>95</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>forward</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBback">
+      <property name="geometry">
+       <rect>
         <x>30</x>
         <y>290</y>
         <width>95</width>
@@ -541,20 +554,7 @@ background-color: #81a9ff; </string>
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pBback">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>290</y>
-        <width>95</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
+       <string>back</string>
       </property>
      </widget>
     </widget>

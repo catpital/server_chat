@@ -1,0 +1,33 @@
+{
+	"BUILD_DIR" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/server_chat_autogen",
+	"CMAKE_BINARY_DIR" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/alexey/QT/server_chat",
+	"CMAKE_SOURCE_DIR" : "D:/alexey/QT/server_chat",
+	"INCLUDE_DIR" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/server_chat_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/alexey/Downloads/feather/chrome.svg",
+		"C:/Users/alexey/Downloads/feather/bell.svg",
+		"D:/alexey/QT/server_chat/icon/icons8-cloud-64.png",
+		"D:/alexey/QT/server_chat/icon/icons8contacts64.png",
+		"D:/alexey/QT/server_chat/icon/icons8-comments-64.png",
+		"D:/alexey/QT/server_chat/icon/icons8-chat-64.png",
+		"D:/alexey/QT/server_chat/icon/icons8-quetion-64.png",
+		"D:/alexey/QT/server_chat/icon/coffee-steam.gif",
+		"D:/alexey/QT/server_chat/icon/icons8-sand-64.png",
+		"D:/alexey/QT/server_chat/icon/ghost-coffee.gif",
+		"D:/alexey/QT/server_chat/icon/icons8-OK-64.png",
+		"D:/alexey/QT/server_chat/icon/caffeine_logo_icon_256818.png"
+	],
+	"LOCK_FILE" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/server_chat_autogen.dir/AutoRcc_resurse_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resurse" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resurse.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.5.2/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/alexey/QT/server_chat/build-server_chat-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/CMakeFiles/server_chat_autogen.dir/AutoRcc_resurse_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/alexey/QT/server_chat/resurse.qrc",
+	"VERBOSITY" : 0
+}

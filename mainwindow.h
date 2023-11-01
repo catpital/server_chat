@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include "sqlite.h"
+#include <QMap>
 //#include <QSQLITE>
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 signals:
     void accepted();
     void rejected();
@@ -44,7 +46,7 @@ private slots:
    // void on_pushButton_2_toggled(bool checked);
 
     //void on_pushButton_2_clicked();
-
+    bool logininapp(const QString _login, const QString _pass, QSqlDatabase db, QSqlRecord _rec);
     void on_pushButton_clicked(bool checked);
 
     void on_buttonBox_accepted();
