@@ -136,11 +136,12 @@ qDebug("while1");
 
                   }
 
-        for (auto & i : Usersmap) {
+//        for (auto & i : Usersmap) {
 
-qDebug()<< "key "<<Usersmap.key(i);
-qDebug()<<"value"<<Usersmap.values();
-        }
+//qDebug()<< "key "<<Usersmap.key(i);
+//QString keyf=Usersmap.key(i);
+//qDebug()<<"value"<<Usersmap.value(keyf);
+//        }
 
         query->clear();
         qDebug()<<db.lastError().text();
@@ -224,8 +225,8 @@ void MainWindow::on_buttonBox_accepted()  // logining
         QString _pass;
             // if (logininapp(login, pass, db, rec))
         for (auto & i : Usersmap) {
-            _login=Usersmap[i];
-            _pass=Usersmap.value(i);
+_login=Usersmap.key(i);
+_pass=Usersmap.value(Usersmap.key(i));
 
             // }
             qDebug()<<"login"<<login;

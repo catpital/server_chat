@@ -122,8 +122,8 @@ public:
         pushButton->setGeometry(QRect(200, 20, 121, 31));
         pushButton->setFocusPolicy(Qt::ClickFocus);
         pushButton->setStyleSheet(QString::fromUtf8("color:#ff007f;\n"
-"checked-color:#ffaa7f;\n"
-"selection-background-color: rgb(255, 170, 127)\n"
+"\n"
+"selection-background-color: #00aa7f;\n"
 ""));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/resorse/C:/Users/alexey/Downloads/feather/chrome.svg"), QSize(), QIcon::Normal, QIcon::Off);
