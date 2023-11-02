@@ -121,6 +121,10 @@ public:
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(200, 20, 121, 31));
         pushButton->setFocusPolicy(Qt::ClickFocus);
+        pushButton->setStyleSheet(QString::fromUtf8("color:#ff007f;\n"
+"checked-color:#ffaa7f;\n"
+"selection-background-color: rgb(255, 170, 127)\n"
+""));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/resorse/C:/Users/alexey/Downloads/feather/chrome.svg"), QSize(), QIcon::Normal, QIcon::Off);
         icon.addFile(QString::fromUtf8(":/resorse/C:/Users/alexey/Downloads/feather/bell.svg"), QSize(), QIcon::Normal, QIcon::On);
@@ -129,10 +133,17 @@ public:
         lcdNumber = new QLCDNumber(centralwidget);
         lcdNumber->setObjectName("lcdNumber");
         lcdNumber->setGeometry(QRect(20, 20, 64, 23));
+        lcdNumber->setStyleSheet(QString::fromUtf8("font-color:  #000000;\n"
+"font: 900 13pt \"Segoe UI\";\n"
+"background-color:#81a9ff; "));
+        lcdNumber->setSegmentStyle(QLCDNumber::Flat);
         lcdNumber_2 = new QLCDNumber(centralwidget);
         lcdNumber_2->setObjectName("lcdNumber_2");
         lcdNumber_2->setGeometry(QRect(100, 20, 64, 23));
-        lcdNumber_2->setStyleSheet(QString::fromUtf8("font-color #ff5500"));
+        lcdNumber_2->setStyleSheet(QString::fromUtf8("font-color:  #000000;\n"
+"font: 900 13pt \"Segoe UI\";\n"
+"background-color:#81a9ff; "));
+        lcdNumber_2->setSegmentStyle(QLCDNumber::Flat);
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(20, 50, 70, 23));
@@ -321,7 +332,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
         tabmessage->setCurrentIndex(0);
 
 

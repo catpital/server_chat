@@ -11,6 +11,8 @@ QString pass="p";
 int ban=0;
 bool logok=false;
 //QSqlRecord rec;
+int users=0;
+int messages=0;
 
 QMap <QString , QString> Usersmap;
 //QObject::connect(MainWindow, MainWindow::on_buttonBox_accepted(), this, Mainwindow::loginapp );
@@ -18,7 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
+    connect(this, SIGNAL (on_pushButton_2_clicked), this, SLOT (displayusers));
+    connect(this, SIGNAL (on_pushButton_3_clicked), this, SLOT (displaymessages));
     connect(ui->groupBox, SIGNAL(buttonBox_accepted()), this, SLOT(logininapp(QString,QString,QSqlDatabase,QSqlRecord)));
     ui->setupUi(this);
     ui->frame_login_adm->setVisible(false);
@@ -52,6 +55,9 @@ MainWindow::MainWindow(QWidget *parent)
         query->exec("INSERT into Users1 (ID, Firstname, Lastname, Email, Pass, Login, Blocking) VALUES (5, 'Admin', 'Lname', 'test@test.ru', 'adm', 'log', 0)");
         query->exec("INSERT into Users1 (ID, Firstname, Lastname, Email, Pass, Login, Blocking) values (6, 'Admin', 'Lname', 'test@test.ru', 'pass', 'login', 0 )");
         //{qDebug()<<"rec not normal";}
+
+        //qDebug() << "Number of Rows: " << qry.size();
+
         query->exec();
 
         model2=new QSqlTableModel(this,db);
@@ -68,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
         model1->select();
         model1->setEditStrategy(QSqlTableModel::OnRowChange);
         ui->tabViewusers ->setModel(model1);
+       // displayusers();
 
         query->exec();
         model3=new QSqlTableModel(this,db);
@@ -77,16 +84,32 @@ MainWindow::MainWindow(QWidget *parent)
         ui->tableViewmess2 ->setModel(model3);
 
         //  qDebug()<<db.lastError().text();
+        query->clear();
+        query->exec("SELECT * FROM Users1");
+
+        if (query->isActive())
+                {
+            while(query->next())
+            {users++;}
+                 }
+        else {users=0;}
+       // qDebug()<<"db open display number2";
+        //users=query->record().count();
+        ui->lcdNumber->display(users);
 
         query->exec("SELECT Pass, Login FROM Users1");
 
                        qDebug()<<db.lastError().text();
+ //displayusers();
+
+
+        //              //  displaymessages();
 
         QSqlRecord rec = query->record();
 
-        QMapIterator<QString, QString> i(Usersmap);
+      //  QMapIterator<QString, QString> i(Usersmap);
         //auto i=Usersmap.cbegin()  ;
-
+        Usersmap.begin();
         while (query->next())
         {
             QString dbpass=query->value(rec.indexOf("Pass")).toString();
@@ -95,20 +118,43 @@ MainWindow::MainWindow(QWidget *parent)
             //um.first.push_back()=dblogin;
             //um.second.push_back=dbpass;
             //Usersmap [dblogin]=dbpass;
-            Usersmap.insert(dblogin, dbpass);
+            qDebug()<<"login "<< dblogin;
+            qDebug()<<"pass "<< dbpass;
+            Usersmap.insert(dblogin, (dbpass));
+
+            //Usersmap.last();
             //               i.Usersmap.first.insert(dblogin);
-            qDebug("while0");
+           //QString str=Usersmap.first();
+         // qDebug()<<"while0"<<str;
+          // str=Usersmap.second();
+           //qDebug()<<"while0"<<str;
             //               i.Usersmap.second.insert(dbpass);
-            i.hasNext();
+            //i.hasNext();
             //i.Usersmap.next();
 qDebug("while1");
             // Usersmap.next();// not worked why?
-            qDebug()<<"login "<< dblogin;
-            qDebug()<<"pass "<< dbpass;
+
                   }
 
-        qDebug()<<db.lastError().text();
+        for (auto & i : Usersmap) {
 
+qDebug()<< "key "<<Usersmap.key(i);
+qDebug()<<"value"<<Usersmap.values();
+        }
+
+        query->clear();
+        qDebug()<<db.lastError().text();
+        query->exec("SELECT * FROM Messages");
+
+        if (query->isActive())
+        {
+while(query->next())
+{messages++;}
+        }
+        else
+        {messages=0;}
+        //users=query->record().count();
+        ui->lcdNumber_2->display(messages);
    }
 
     else{qDebug("not open DB");}
@@ -182,10 +228,10 @@ void MainWindow::on_buttonBox_accepted()  // logining
             _pass=Usersmap.value(i);
 
             // }
-//            qDebug()<<"login"<<login;
-//            qDebug()<<"_login"<<_login;
-//            qDebug()<<"pass"<<pass;
-//            qDebug()<<"_pass"<<_pass;
+            qDebug()<<"login"<<login;
+            qDebug()<<"_login"<<_login;
+            qDebug()<<"pass"<<pass;
+            qDebug()<<"_pass"<<_pass;
             //if (login=="login" && pass=="pass")
             if (login==_login && pass==_pass)
             {
@@ -223,12 +269,14 @@ void MainWindow::on_lineEdit_editingFinished()
 {
 
     login=ui->lineEdit->text();
+    ui->lineEdit_2->setFocus();
 
 }
 
 void MainWindow::on_lineEdit_2_editingFinished()
 {
     pass=ui->lineEdit_2->text();
+    ui->buttonBox->setFocus();
 
 }
 
@@ -258,6 +306,7 @@ void MainWindow::on_pushButton_clicked(bool checked) //admin mode
 {
 
     if (checked){ui->pushButton->setChecked(true);}
+    //ui->pushButton->setProperty(QtColor:green);
     ui->pushButton->setEnabled(false);
     ui->actionadmin_mode->setEnabled(false);
     ui->frame_login_adm->setVisible(true);
@@ -320,7 +369,7 @@ void MainWindow::on_checkBox_block_clicked() // bloking
         QString blocktext=QString ("is blocked ");
         QMessageBox::information(this, "Yes" , blocktext);
             //if current block is set  blocking 9999
-        //ui->tabViewusers->setCurrentIndex()->setBackground(Qt::darkYellow);
+        //ui->tabViewusers->CurrentIndex()->setBackground(Qt::darkYellow);
         ui->checkBox_block->setChecked(false);
     }
 }
@@ -350,14 +399,19 @@ void MainWindow::on_actionset_ban_triggered() // ban menu
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    if (logok){ ui->stackedWidget->setCurrentIndex(3);}
+    if (logok){ ui->stackedWidget->setCurrentIndex(3);
+   // displayusers();}
+
+    }
     else {QMessageBox::warning(this, "" ,"Need to login" );}
 }
 
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    if (logok){ ui->stackedWidget->setCurrentIndex(4);}
+    if (logok){ ui->stackedWidget->setCurrentIndex(4);
+   // displaymessages();
+    }
     else {QMessageBox::warning(this, "" ,"Need to login" );}
 }
 
@@ -372,12 +426,40 @@ void MainWindow::on_pBadduser_clicked()
 void MainWindow::on_pBsubmit_clicked()
 {
     model1->submitAll();
+   //displayusers();
 }
+void MainWindow::displayusers()
+{
+    if(db.open()){
+        query->clear();
+        query->exec("SELECT * FROM Users1");
 
-
+        if (query->isActive())
+        {
+            while(query->next())
+            {users++;}
+        }
+        else {users=0;}
+        // qDebug()<<"db open display number2";
+        //users=query->record().count();
+        ui->lcdNumber->display(users);
+    }
+    else qDebug()<<"db not open";
+}
+void MainWindow::displaymessages()
+{
+    if(db.open()){
+    query->prepare("SELECT * FROM Messages");
+    query->exec();
+    messages=query->size();
+    //users=query->record().count();
+    ui->lcdNumber_2->display(messages);}
+    else qDebug()<<"db not open";
+}
 void MainWindow::on_pBdeleteuser_clicked()
 {
     model1->removeRow(row);
+   // displayusers();
 }
 
 
@@ -389,13 +471,15 @@ void MainWindow::on_tabViewusers_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableViewmessages_clicked(const QModelIndex &index)
 {
-    model1->submitAll();
+    model2->submitAll();
+  //  displaymessages();
 }
 
 
 void MainWindow::on_pBnext_clicked()
 {
     model2->submitAll();
+   // displaymessages();
     ui->tabmessage->setCurrentIndex(1);
 }
 
@@ -415,11 +499,13 @@ void MainWindow::on_pBadd_clicked()
 void MainWindow::on_pBdel_clicked()
 {
     model2->removeRow(row);
+   // displaymessages();
 }
 
 
 void MainWindow::on_pBsub_clicked()
 {
     model2->submitAll();
+   // displaymessages();
 }
 

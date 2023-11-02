@@ -42,7 +42,8 @@ private slots:
     void on_actioncheck_messages_triggered();
 
     void on_actionhelp_triggered();
-
+    void displayusers();
+    void displaymessages();
    // void on_pushButton_2_toggled(bool checked);
 
     //void on_pushButton_2_clicked();
